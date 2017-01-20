@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03动画效果--滑动效果--下拉显示，上拉隐藏</title>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("div").css({
+				"width":"400px",
+				"height":"300px",
+				"background":"pink",
+				"display":"none"
+			});
+			$("button").eq(0).click(function(){
+				$("div").slideDown(3000);//下拉执行3秒
+				// $("div").slideDown(3000,"linear",function(){//参数1：动画执行时长下拉执行3秒 线性匀速
+
+				// });
+				// $("div").slideDown(3000,"swing",function(){//下拉执行3秒 摇篮 先慢后快
+
+				// });
+			});
+			$("button").eq(1).click(function(){
+				$("div").slideUp(3000);
+			});
+			$("button").eq(2).click(function(){
+				$("div").slideToggle(2000);
+			});
+			$("button").eq(3).click(function(){
+				$("div").fadeIn(3000);
+			});
+			$("button").eq(4).click(function(){
+				$("div").fadeOut(3000);
+			});
+			$("button").eq(5).click(function(){
+				$("div").fadeToggle(3000);
+			});
+			$("button").eq(6).click(function(){
+				$("div").fadeTo(3000,0.8);//3秒钟淡入淡出到透明度为0.8
+			});
+			$("button").eq(7).click(function(){//自定义动画
+				$("div").animate({
+					"width":"800px",
+					"height":"800px"
+				},3000);//执行用时3秒
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<button>下拉显示</button>
+	<button>上拉隐藏</button>
+	<button>上下拉切换</button>
+	<button>淡入</button>
+	<button>淡出</button>
+	<button>淡入淡出切换</button>
+	<button>淡入淡出到哪个透明度</button>
+	<button>自定义动画</button>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02下拉菜单样式</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{
+			list-style: none;
+		}
+		.wrap{
+			width: 330px;
+			height: 30px;
+			margin: 100px auto 0;
+			background: url(images/bg.jpg) no-repeat;
+			padding-left: 10px;
+		}
+		li{
+			float: left;
+			width: 100px;
+			height: 30px;
+			margin-right: 10px;
+			position: relative;/*让二级菜单定位不显示*/
+		}		
+		a{
+			text-decoration: none;
+			color: black;
+			cursor: pointer;
+			display: block;
+			width: 100px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			background: url(images/libg.jpg) no-repeat;
+		}
+		.wrap li ul{/*让二级菜单定位隐藏*/
+			position: absolute;
+			display: none;
+		}
+	</style>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			// 方法一：
+			$(".wrap li").mouseenter(function(){
+				$(this).children("ul").stop().slideDown();//stop()停止动画
+			});
+			$(".wrap li").mouseleave(function(){
+				$(this).children("ul").stop().slideUp();
+			});
+			// 方法二：
+			// $(".wrap li").hover(function() {
+			// 	$(this).children("ul").show();
+			// }, function() {
+			// 	$(this).children("ul").hide();
+			// });
+			// 方法三：
+			// $(".wrap li").hover(function(){
+			// 	var $this = $(this).children("ul");
+			// 	var isShow = $this.css("display");
+			// 	if(isShow == "block"){
+			// 		$this.hide();
+			// 	}else{
+			// 		$this.show();
+			// 	}
+			// });
+			// 方法四：
+			// $(".wrap li").hover(function(){
+			// 	$(this).children("ul").slideToggle();//slideToggle切换意思
+			// });
+
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li>
+				<a href="#">一级菜单1</a>
+				<ul>
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">二级菜单</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">一级菜单2</a>
+				<ul>
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">二级菜单</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">一级菜单3</a>
+				<ul>
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">二级菜单</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>		
+</html>

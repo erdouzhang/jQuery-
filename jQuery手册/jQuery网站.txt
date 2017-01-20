@@ -1,0 +1,4 @@
+菜鸟教程 jQuery UI：        http://www.runoob.com/jqueryui/jqueryui-intro.html
+（英语）下载jQuery UI：	    http://jqueryui.com/download/
+（英语）jQuery官网插接教程：http://learn.jquery.com/plugins/basic-plugin-creation/
+w3school：                  http://www.w3school.com.cn/jquery/index.asp

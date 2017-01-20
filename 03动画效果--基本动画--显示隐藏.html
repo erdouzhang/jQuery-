@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03动画效果--基本动画--显示隐藏</title>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("div").css({
+				"width":"400px",
+				"height":"300px",
+				"background":"pink",
+				"display":"none"
+			});
+			$("button").eq(0).click(function(){//eq(0)获得第一个btn
+				// $("div").show();
+				// $("div").show(2000);//以毫秒为单位 3秒慢慢出现
+				// $("div").show("slow");
+				// $("div").show("fast");
+				// $("div").show("normal");
+
+				$("div").show(2000,function(){
+					alert("动画结束后执行此函数");
+				});
+			});
+			$("button").eq(1).click(function(){//eq(1)获得第二个btn
+				$("div").hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div></div>
+</body>
+</html>

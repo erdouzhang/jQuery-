@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01体验jQuery</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+	</style>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				$("div").hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="btn" value="点击">点击隐藏</button>
+	<div></div>
+</body>
+</html>
